@@ -8,6 +8,12 @@ package model;
  *
  * @author tioli
  */
-public class Ripple extends Moeda implements Tarifacao {
-    
+public class Ripple extends Moeda{
+    public Ripple() {
+        setNome("XRP");
+        setTxCompra(0.01);
+        setTxVenda(0.01);
+        setSaldo(0.0);
+    }
+
 }
