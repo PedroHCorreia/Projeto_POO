@@ -8,6 +8,14 @@ package model;
  *
  * @author tioli
  */
-public class Real extends Moeda implements Tarifacao {
-    
+public class Real extends Moeda{
+
+    public Real() {
+        setNome("Real");
+        setTxCompra(0.0);
+        setTxVenda(0.0);
+        setSaldo(0.0);
+        setCota(1.0);
+    }
+
 }
