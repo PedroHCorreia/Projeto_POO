@@ -8,7 +8,11 @@ package model;
  *
  * @author tioli
  */
-public class Bitcoin extends Moeda implements Tarifacao{
-
- 
+public class Bitcoin extends Moeda{
+    public Bitcoin() {
+        setNome("BTC");
+        setTxCompra(0.02);
+        setTxVenda(0.03);
+        setSaldo(0.0);
+    }
 }
