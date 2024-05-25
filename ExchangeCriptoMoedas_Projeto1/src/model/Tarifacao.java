@@ -9,5 +9,6 @@ package model;
  * @author tioli
  */
 public interface Tarifacao {
-    
+    public Double tarifaCompra(Double valor);
+    public Double tarifaVenda(Double valor);
 }
