@@ -56,12 +56,12 @@ public class Moeda implements Tarifacao {
     
     @Override
     public Double tarifaCompra(Double valor) {
-        return (valor-(valor*getTxCompra()));
+        return (valor+(valor*getTxCompra()));
     }
 
     @Override
     public Double tarifaVenda(Double valor) {
-        return (valor-(valor*getTxVenda()));
+        return (valor+(valor*getTxVenda()));
     }
     
 }
