@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.ControllerSaldo;
+import controller.ControllerExtrato;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import model.Investidor;
@@ -13,15 +13,15 @@ import model.Investidor;
  *
  * @author moijo
  */
-public class JSaldo extends javax.swing.JFrame {
+public class JExtratos extends javax.swing.JFrame {
     /**
      * Creates new form JSaldo
      * @param investidor
      */
-    public JSaldo(Investidor investidor) {
+    public JExtratos(Investidor investidor) {
         initComponents();
         this.investidor = investidor;
-        this.controller = new ControllerSaldo(this);
+        this.controller = new ControllerExtrato(this);
     }
 
     /**
@@ -38,7 +38,7 @@ public class JSaldo extends javax.swing.JFrame {
         btConsulta = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtSaldos = new javax.swing.JTextArea();
+        txtExtratos = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -57,38 +57,41 @@ public class JSaldo extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Consultar Saldo");
+        jLabel2.setText("Consultar Extrato");
 
-        txtSaldos.setColumns(20);
-        txtSaldos.setRows(5);
-        jScrollPane1.setViewportView(txtSaldos);
+        txtExtratos.setColumns(20);
+        txtExtratos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtExtratos.setRows(5);
+        jScrollPane1.setViewportView(txtExtratos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 210, Short.MAX_VALUE)
                 .addComponent(btConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(173, 173, 173))
+                .addGap(210, 210, 210))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel2)
-                .addGap(36, 36, 36)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -103,15 +106,15 @@ public class JSaldo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultaActionPerformed
-        controller.consultar(investidor);
+        controller.consultarExtrato(investidor);
     }//GEN-LAST:event_btConsultaActionPerformed
 
-    public JTextArea getTxtSaldos() {
-        return txtSaldos;
+    public JTextArea getTxtExtratos() {
+        return txtExtratos;
     }
 
-    public void setTxtSaldos(JTextArea txtSaldos) {
-        this.txtSaldos = txtSaldos;
+    public void setTxtExtratos(JTextArea txtExtratos) {
+        this.txtExtratos = txtExtratos;
     }
 
     public JTextField getTxtSenha() {
@@ -121,6 +124,8 @@ public class JSaldo extends javax.swing.JFrame {
     public void setTxtSenha(JTextField txtSenha) {
         this.txtSenha = txtSenha;
     }
+
+   
 
     
     /**
@@ -159,13 +164,13 @@ public class JSaldo extends javax.swing.JFrame {
 //    }
     
         Investidor investidor;
-        private ControllerSaldo controller;
+        private ControllerExtrato controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btConsulta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtSaldos;
+    private javax.swing.JTextArea txtExtratos;
     private javax.swing.JTextField txtSenha;
     // End of variables declaration//GEN-END:variables
 }
