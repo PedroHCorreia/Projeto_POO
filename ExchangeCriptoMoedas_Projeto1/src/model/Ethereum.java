@@ -8,6 +8,11 @@ package model;
  *
  * @author tioli
  */
-public class Ethereum extends Moeda implements Tarifacao{
-    
+public class Ethereum extends Moeda{
+    public Ethereum() {
+        setNome("ETH");
+        setTxCompra(0.01);
+        setTxVenda(0.02);
+        setSaldo(0.0);
+    }
 }
