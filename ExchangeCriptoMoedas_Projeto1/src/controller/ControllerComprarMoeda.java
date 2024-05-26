@@ -52,14 +52,15 @@ public class ControllerComprarMoeda {
         if(valor <= inv.getCarteira().getMoedas().get(0).getSaldo()){
             int moeda = 1+janela.getCbxMoedas().getSelectedIndex();
             System.out.println(moeda);
-            Double valor2,valorFinal;
-            valor2 = valor / inv.getCarteira().getMoedas().get(moeda).getCota();
-            valorFinal = inv.getCarteira().getMoedas().get(moeda).tarifaCompra(valor);
+            Double saldoMoeda, valorComCotacao, saldoReal;
+            valorComCotacao = valor / inv.getCarteira().getMoedas().get(moeda).getCota();
+            saldoReal = inv.getCarteira().getMoedas().get(moeda).tarifaCompra(valor);
             
             inv.getCarteira().getMoedas().get(0).setSaldo(
-                inv.getCarteira().getMoedas().get(0).getSaldo()-valorFinal);
+                inv.getCarteira().getMoedas().get(0).getSaldo()-saldoReal);
             
-            inv.getCarteira().getMoedas().get(moeda).setSaldo(valor2);
+            saldoMoeda = inv.getCarteira().getMoedas().get(moeda).getSaldo();
+            inv.getCarteira().getMoedas().get(moeda).setSaldo(saldoMoeda+valorComCotacao);
             
             gerarExtrato(inv, valor, moeda);
             atualizaValores(inv);
