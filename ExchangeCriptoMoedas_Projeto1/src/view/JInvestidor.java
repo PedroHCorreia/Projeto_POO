@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.ControllerInvestidor;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.Investidor;
 
@@ -16,6 +18,7 @@ public class JInvestidor extends javax.swing.JFrame {
     public JInvestidor(Investidor investidor) {
         initComponents();
         this.investidor = investidor;
+        controller = new ControllerInvestidor(this);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,8 +35,8 @@ public class JInvestidor extends javax.swing.JFrame {
         btConsExtrato = new javax.swing.JButton();
         btDepositar = new javax.swing.JButton();
         btSacar = new javax.swing.JButton();
-        btDepositar1 = new javax.swing.JButton();
-        btSacar1 = new javax.swing.JButton();
+        btComprarMoeda = new javax.swing.JButton();
+        btVenderMoeda = new javax.swing.JButton();
         btAtualizarCot = new javax.swing.JButton();
         btSair = new javax.swing.JButton();
 
@@ -85,23 +88,23 @@ public class JInvestidor extends javax.swing.JFrame {
             }
         });
 
-        btDepositar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btDepositar1.setText("Comprar criptomoedas");
-        btDepositar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btDepositar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btDepositar1.addActionListener(new java.awt.event.ActionListener() {
+        btComprarMoeda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btComprarMoeda.setText("Comprar criptomoedas");
+        btComprarMoeda.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btComprarMoeda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btComprarMoeda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btDepositar1ActionPerformed(evt);
+                btComprarMoedaActionPerformed(evt);
             }
         });
 
-        btSacar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btSacar1.setText("Vender criptomoedas");
-        btSacar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btSacar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btSacar1.addActionListener(new java.awt.event.ActionListener() {
+        btVenderMoeda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btVenderMoeda.setText("Vender criptomoedas");
+        btVenderMoeda.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btVenderMoeda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btVenderMoeda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSacar1ActionPerformed(evt);
+                btVenderMoedaActionPerformed(evt);
             }
         });
 
@@ -141,10 +144,10 @@ public class JInvestidor extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btDepositar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btAtualizarCot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btDepositar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btComprarMoeda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btSacar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btVenderMoeda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btSacar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(68, Short.MAX_VALUE))))
@@ -175,8 +178,8 @@ public class JInvestidor extends javax.swing.JFrame {
                     .addComponent(btSacar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btDepositar1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btSacar1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btComprarMoeda, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btVenderMoeda, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAtualizarCot, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -187,9 +190,9 @@ public class JInvestidor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btDepositar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btDepositar1ActionPerformed
+    private void btComprarMoedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btComprarMoedaActionPerformed
+        new JComprarMoeda(investidor).setVisible(true);
+    }//GEN-LAST:event_btComprarMoedaActionPerformed
 
     private void btConsSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsSaldoActionPerformed
         new JSaldo(investidor).setVisible(true);
@@ -207,18 +210,34 @@ public class JInvestidor extends javax.swing.JFrame {
         new JSaque(investidor).setVisible(true);
     }//GEN-LAST:event_btSacarActionPerformed
 
-    private void btSacar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSacar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btSacar1ActionPerformed
+    private void btVenderMoedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVenderMoedaActionPerformed
+        new JVenderMoeda(investidor).setVisible(true);
+    }//GEN-LAST:event_btVenderMoedaActionPerformed
 
     private void btAtualizarCotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarCotActionPerformed
-        // TODO add your handling code here:
+        controller.atualizaValorCotas(investidor);
     }//GEN-LAST:event_btAtualizarCotActionPerformed
 
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
-        // TODO add your handling code here:
+        controller.Sair();
     }//GEN-LAST:event_btSairActionPerformed
 
+    public JLabel getLblNome() {
+        return lblNome;
+    }
+    public void setLblNome(JLabel lblNome) {
+        this.lblNome = lblNome;
+    } 
+
+    public Investidor getInvestidor() {
+        return investidor;
+    }
+
+    public void setInvestidor(Investidor investidor) {
+        this.investidor = investidor;
+    }
+    
+    
     /**
      * @param args the command line arguments
 //     */
@@ -253,18 +272,17 @@ public class JInvestidor extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-    
+    ControllerInvestidor controller;
     Investidor investidor;
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAtualizarCot;
+    private javax.swing.JButton btComprarMoeda;
     private javax.swing.JButton btConsExtrato;
     private javax.swing.JButton btConsSaldo;
     private javax.swing.JButton btDepositar;
-    private javax.swing.JButton btDepositar1;
     private javax.swing.JButton btSacar;
-    private javax.swing.JButton btSacar1;
     private javax.swing.JButton btSair;
+    private javax.swing.JButton btVenderMoeda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblNome;
     // End of variables declaration//GEN-END:variables
