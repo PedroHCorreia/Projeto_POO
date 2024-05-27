@@ -13,8 +13,10 @@ import model.Investidor;
  * @author moijo
  */
 public class JDeposito extends javax.swing.JFrame {
+
     /**
      * Creates new form JSaldo
+     *
      * @param investidor
      */
     public JDeposito(Investidor investidor) {
@@ -92,22 +94,31 @@ public class JDeposito extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     *
+     * @param evt
+     */
     private void btDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositoActionPerformed
         controller.depositar(investidor);
     }//GEN-LAST:event_btDepositoActionPerformed
 
+    /**
+     *
+     * @return txtDeposito JTextField
+     */
     public JTextField getTxtDeposito() {
         return txtDeposito;
     }
 
+    /**
+     *
+     * @param txtDeposito
+     */
     public void setTxtDeposito(JTextField txtDeposito) {
         this.txtDeposito = txtDeposito;
     }
 
-    
-    /**
-     * @param args the command line arguments
-     */
+ 
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -139,8 +150,8 @@ public class JDeposito extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-        ControllerDeposito controller;
-        Investidor investidor;
+    ControllerDeposito controller;
+    Investidor investidor;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btDeposito;
     private javax.swing.JLabel jLabel1;

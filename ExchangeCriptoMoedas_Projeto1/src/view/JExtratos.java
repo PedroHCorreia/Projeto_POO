@@ -14,8 +14,10 @@ import model.Investidor;
  * @author moijo
  */
 public class JExtratos extends javax.swing.JFrame {
+
     /**
      * Creates new form JSaldo
+     *
      * @param investidor
      */
     public JExtratos(Investidor investidor) {
@@ -105,32 +107,47 @@ public class JExtratos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     *
+     * @param evt
+     */
     private void btConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultaActionPerformed
         controller.consultarExtrato(investidor);
     }//GEN-LAST:event_btConsultaActionPerformed
 
+    /**
+     *
+     * @return txtExtratos JTextArea
+     */
     public JTextArea getTxtExtratos() {
         return txtExtratos;
     }
 
+    /**
+     *
+     * @param txtExtratos
+     */
     public void setTxtExtratos(JTextArea txtExtratos) {
         this.txtExtratos = txtExtratos;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtSenha() {
         return txtSenha;
     }
 
+    /**
+     *
+     * @param txtSenha
+     */
     public void setTxtSenha(JTextField txtSenha) {
         this.txtSenha = txtSenha;
     }
 
-   
 
-    
-    /**
-     * @param args the command line arguments
-     */
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -162,9 +179,8 @@ public class JExtratos extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-    
-        Investidor investidor;
-        private ControllerExtrato controller;
+    Investidor investidor;
+    private ControllerExtrato controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btConsulta;
     private javax.swing.JLabel jLabel1;

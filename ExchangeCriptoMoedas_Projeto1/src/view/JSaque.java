@@ -94,22 +94,32 @@ public class JSaque extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositoActionPerformed
         controller.sacar(investidor);
     }//GEN-LAST:event_btDepositoActionPerformed
 
+    /**
+     * 
+     * @return txtSaque JTextField
+     */
     public JTextField getTxtSaque() {
         return txtSaque;
     }
 
+    /**
+     * 
+     * @param txtSaque 
+     */
     public void setTxtSaque(JTextField txtSaque) {
         this.txtSaque = txtSaque;
     }
 
    
-    /**
-     * @param args the command line arguments
-     */
+
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

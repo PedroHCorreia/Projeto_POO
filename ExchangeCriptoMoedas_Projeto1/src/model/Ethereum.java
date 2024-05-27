@@ -5,10 +5,15 @@
 package model;
 
 /**
+ * Classe da criptomoeda Ethereum
  *
  * @author tioli
  */
-public class Ethereum extends Moeda{
+public class Ethereum extends Moeda {
+
+    /**
+     * Construtor com os valores padroes da moeda
+     */
     public Ethereum() {
         setNome("ETH");
         setTxCompra(0.01);

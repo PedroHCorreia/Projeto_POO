@@ -9,18 +9,32 @@ import view.JSaldo;
 import model.Investidor;
 
 /**
+ * Classe para controlar a janela JSaldo
  *
  * @author moijo
  */
 public class ControllerSaldo {
+
     private JSaldo janela;
 
+    /**
+     * Construtor
+     *
+     * @param janela obj JSaldo
+     */
     public ControllerSaldo(JSaldo janela) {
         this.janela = janela;
     }
-    
-    public void consultar(Investidor investidor){
-        if(janela.getTxtSenha().getText().equals(investidor.getSenha())){
+
+    /**
+     * Metodo para informar os saldos atuais do investidor
+     *
+     * @param investidor obj Investidor
+     */
+    public void consultar(Investidor investidor) {
+        //Verificando se as senhas batem
+        if (janela.getTxtSenha().getText().equals(investidor.getSenha())) {
+            //Formatando uma String com os saldos
             String saldos = String.format("""
              Nome: %s
              CPF: %s
@@ -30,16 +44,15 @@ public class ControllerSaldo {
              Ethereum: %s
              Ripple: %s
              """, investidor.getNome(), investidor.getCpf(),
-             investidor.getCarteira().getMoedas().get(0).getSaldo(),
-             investidor.getCarteira().getMoedas().get(1).getSaldo().toString(),
-             investidor.getCarteira().getMoedas().get(2).getSaldo().toString(),
-             investidor.getCarteira().getMoedas().get(3).getSaldo().toString());
-            
-             janela.getTxtSaldos().setText(saldos);
-        }
-        else{
+                    investidor.getCarteira().getMoedas().get(0).getSaldo(),
+                    investidor.getCarteira().getMoedas().get(1).getSaldo().toString(),
+                    investidor.getCarteira().getMoedas().get(2).getSaldo().toString(),
+                    investidor.getCarteira().getMoedas().get(3).getSaldo().toString());
+            //Apresentando a String na janela
+            janela.getTxtSaldos().setText(saldos);
+        } else {
             JOptionPane.showMessageDialog(janela, "Senha incorreta", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
 }

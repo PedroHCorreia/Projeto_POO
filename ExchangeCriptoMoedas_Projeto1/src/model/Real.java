@@ -5,11 +5,15 @@
 package model;
 
 /**
+ * Classe da moeda Real
  *
  * @author tioli
  */
-public class Real extends Moeda{
+public class Real extends Moeda {
 
+    /**
+     * Construtor com os valores padroes da moeda
+     */
     public Real() {
         setNome("Real");
         setTxCompra(0.0);

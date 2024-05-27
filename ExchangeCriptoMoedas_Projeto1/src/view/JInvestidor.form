@@ -36,11 +36,11 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="btDepositar" max="32767" attributes="0"/>
                           <Component id="btAtualizarCot" max="32767" attributes="0"/>
-                          <Component id="btDepositar1" max="32767" attributes="0"/>
+                          <Component id="btComprarMoeda" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btSacar1" max="32767" attributes="0"/>
+                          <Component id="btVenderMoeda" max="32767" attributes="0"/>
                           <Component id="btSair" max="32767" attributes="0"/>
                           <Component id="btSacar" max="32767" attributes="0"/>
                       </Group>
@@ -82,8 +82,8 @@
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btDepositar1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="btSacar1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btComprarMoeda" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btVenderMoeda" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="30" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -188,7 +188,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSacarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btDepositar1">
+    <Component class="javax.swing.JButton" name="btComprarMoeda">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
@@ -204,10 +204,10 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btDepositar1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btComprarMoedaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btSacar1">
+    <Component class="javax.swing.JButton" name="btVenderMoeda">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
@@ -223,7 +223,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSacar1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVenderMoedaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btAtualizarCot">

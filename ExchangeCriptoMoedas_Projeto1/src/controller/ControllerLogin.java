@@ -15,24 +15,38 @@ import view.JLogin;
 import view.JInvestidor;
 
 /**
+ * Classe para controlar a janela JInvestidor
  *
  * @author moijo
  */
 public class ControllerLogin {
+
     private JLogin janela;
 
+    /**
+     * Construtor
+     *
+     * @param janela obj JLogin
+     */
     public ControllerLogin(JLogin janela) {
         this.janela = janela;
     }
-    
-    public void loginInvestidor(){
-        Investidor investidor = new Investidor(null,janela.getTxtCpf().getText(),janela.getTxtSenha().getText());
+
+    /**
+     * Metodo para autenticar o login e receber as informacoes do investidor
+     */
+    public void loginInvestidor() {
+        //Recebndo os valores digitados na janela
+        Investidor investidor = new Investidor(null, janela.getTxtCpf().getText(), janela.getTxtSenha().getText());
+        //Recebndo os valores armazenados no banco de dados
         Conexao conexao = new Conexao();
-        try{
+        try {
             Connection conn = conexao.getConnection();
             InvestidorDAO dao = new InvestidorDAO(conn);
+            //Verificando se as informacoes batem
             ResultSet res = dao.consultar(investidor);
-            if(res.next()){
+            if (res.next()) {
+                //Informando que o login foi efetuado, armazenando os valores em um obj Investidor e trocando de janela
                 JOptionPane.showMessageDialog(janela, "Login Feito", "Aviso", JOptionPane.INFORMATION_MESSAGE);
                 investidor.setNome(res.getString("nome"));
                 investidor.setCpf(res.getString("cpf"));
@@ -47,13 +61,13 @@ public class ControllerLogin {
                 JInvestidor jInvest = new JInvestidor(investidor);
                 jInvest.setVisible(true);
                 janela.setVisible(false);
-            } else{
+            } else {
                 JOptionPane.showMessageDialog(janela, "CPF ou senha incorretos", "Erro", JOptionPane.ERROR_MESSAGE);
-                
+
             }
-        } catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(janela, "Erro de conexão", "Erro", JOptionPane.ERROR_MESSAGE);
-                
+
         }
     }
 }

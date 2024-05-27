@@ -5,10 +5,15 @@
 package model;
 
 /**
+ * Classe da criptomoeda Ripple
  *
  * @author tioli
  */
-public class Ripple extends Moeda{
+public class Ripple extends Moeda {
+
+    /**
+     * Construtor com os valores padroes da moeda
+     */
     public Ripple() {
         setNome("XRP");
         setTxCompra(0.01);

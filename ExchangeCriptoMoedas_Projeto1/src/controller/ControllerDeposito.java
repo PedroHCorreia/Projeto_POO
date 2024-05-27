@@ -16,39 +16,58 @@ import model.Investidor;
 import view.JDeposito;
 
 /**
+ * Classe para controlar a janela JDeposito
  *
  * @author moijo
  */
 public class ControllerDeposito {
+
     private JDeposito janela;
 
+    /**
+     * Construtor
+     *
+     * @param janela obj JDeposito
+     */
     public ControllerDeposito(JDeposito janela) {
         this.janela = janela;
     }
-    
-    public void depositar(Investidor investidor){
+
+    /**
+     * Metodo para adicionar um valor ao saldo de Real do investidor
+     *
+     * @param investidor obj Investidor
+     */
+    public void depositar(Investidor investidor) {
         Double valor = Double.parseDouble(janela.getTxtDeposito().getText());
         investidor.getCarteira().getMoedas().get(0).setSaldo(
-                investidor.getCarteira().getMoedas().get(0).getSaldo()+valor);
-        
-        
+                investidor.getCarteira().getMoedas().get(0).getSaldo() + valor);
+
+        //Atualizando os dados do investidor no banco de dados
         Conexao conexao = new Conexao();
-        try{
+        try {
             Connection conn = conexao.getConnection();
             InvestidorDAO daoInv = new InvestidorDAO(conn);
             daoInv.atualizar(investidor);
             String saldos = saldosFormatados(investidor);
             gerarExtrato(investidor, valor);
             JOptionPane.showMessageDialog(janela, saldos, "Sucesso!", JOptionPane.PLAIN_MESSAGE);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(janela, "Falha de conexão ao atualizar investidor!", "Erro", JOptionPane.ERROR_MESSAGE);
             System.out.println(e);
-        }       
+        }
     }
-    
-    public void gerarExtrato(Investidor inv, Double valor){
-        String stValor,stReal,stBtc,stEth,stXrp,stCota,stTx, moeda;
-        
+
+    /**
+     * Metodo para gerar extratos
+     *
+     * @param inv objeto Investidor
+     * @param valor Double do valor da transacao
+     */
+    public void gerarExtrato(Investidor inv, Double valor) {
+        String stValor, stReal, stBtc, stEth, stXrp, stCota, stTx, moeda;
+
+        // Recebendo os valores e convertendo para String
         stValor = valor.toString();
         stReal = inv.getCarteira().getMoedas().get(0).getSaldo().toString();
         stBtc = inv.getCarteira().getMoedas().get(1).getSaldo().toString();
@@ -57,25 +76,31 @@ public class ControllerDeposito {
         stCota = inv.getCarteira().getMoedas().get(0).getCota().toString();
         stTx = inv.getCarteira().getMoedas().get(0).getTxCompra().toString();
         moeda = inv.getCarteira().getMoedas().get(0).getNome();
-        
-        
-        
+
+        //Pegando a data formatada
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        
+
+        //Inserindo o extrato no banco de dados
         Conexao conexao = new Conexao();
-        try{
+        try {
             Connection conn = conexao.getConnection();
             ExtratoDAO daoext = new ExtratoDAO(conn);
-            daoext.inserirExtrato(dtf.format(now), "+", stValor, moeda, stCota, 
+            daoext.inserirExtrato(dtf.format(now), "+", stValor, moeda, stCota,
                     stTx, stReal, stBtc, stEth, stXrp, inv.getCpf());
-        }catch(SQLException e){
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(janela, "Falha de conexão ao gerar extrato!", "Erro", JOptionPane.ERROR_MESSAGE);
             System.out.println(e);
         }
     }
-    
-    public String saldosFormatados(Investidor investidor){
+
+    /**
+     * Metodo para formatar os saldos em uma String
+     *
+     * @param investidor obj Investidor
+     * @return saldos String com os saldos formatados
+     */
+    public String saldosFormatados(Investidor investidor) {
         String saldos = String.format("""
              Nome: %s
              CPF: %s
@@ -85,12 +110,12 @@ public class ControllerDeposito {
              Ethereum: %s
              Ripple: %s
              """, investidor.getNome(), investidor.getCpf(),
-             investidor.getCarteira().getMoedas().get(0).getSaldo(),
-             investidor.getCarteira().getMoedas().get(1).getSaldo().toString(),
-             investidor.getCarteira().getMoedas().get(2).getSaldo().toString(),
-             investidor.getCarteira().getMoedas().get(3).getSaldo().toString());
-        
+                investidor.getCarteira().getMoedas().get(0).getSaldo(),
+                investidor.getCarteira().getMoedas().get(1).getSaldo().toString(),
+                investidor.getCarteira().getMoedas().get(2).getSaldo().toString(),
+                investidor.getCarteira().getMoedas().get(3).getSaldo().toString());
+
         return saldos;
     }
-            
+
 }

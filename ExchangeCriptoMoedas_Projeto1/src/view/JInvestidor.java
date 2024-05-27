@@ -190,57 +190,102 @@ public class JInvestidor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btComprarMoedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btComprarMoedaActionPerformed
         new JComprarMoeda(investidor).setVisible(true);
     }//GEN-LAST:event_btComprarMoedaActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btConsSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsSaldoActionPerformed
         new JSaldo(investidor).setVisible(true);
     }//GEN-LAST:event_btConsSaldoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btConsExtratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsExtratoActionPerformed
         new JExtratos(investidor).setVisible(true);
     }//GEN-LAST:event_btConsExtratoActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btDepositarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDepositarActionPerformed
         new JDeposito(investidor).setVisible(true);
     }//GEN-LAST:event_btDepositarActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btSacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSacarActionPerformed
         new JSaque(investidor).setVisible(true);
     }//GEN-LAST:event_btSacarActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btVenderMoedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVenderMoedaActionPerformed
         new JVenderMoeda(investidor).setVisible(true);
     }//GEN-LAST:event_btVenderMoedaActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btAtualizarCotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizarCotActionPerformed
         controller.atualizaValorCotas(investidor);
     }//GEN-LAST:event_btAtualizarCotActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
         controller.Sair();
     }//GEN-LAST:event_btSairActionPerformed
 
+    /**
+     * 
+     * @return 
+     */
     public JLabel getLblNome() {
         return lblNome;
     }
+    /**
+     * 
+     * @param lblNome 
+     */
     public void setLblNome(JLabel lblNome) {
         this.lblNome = lblNome;
     } 
 
+    /**
+     * 
+     * @return 
+     */
     public Investidor getInvestidor() {
         return investidor;
     }
-
+    /**
+     *
+     * @param investidor
+     */
     public void setInvestidor(Investidor investidor) {
         this.investidor = investidor;
     }
     
     
-    /**
-     * @param args the command line arguments
-//     */
+ 
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

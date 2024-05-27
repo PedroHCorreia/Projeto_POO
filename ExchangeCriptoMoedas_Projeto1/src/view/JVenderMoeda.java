@@ -223,87 +223,160 @@ public class JVenderMoeda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void cbxMoedasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxMoedasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxMoedasActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfirmaActionPerformed
         controller.ConfirmaSenha(investidor);
     }//GEN-LAST:event_btConfirmaActionPerformed
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVenderActionPerformed
         controller.VenderMoeda(investidor);
     }//GEN-LAST:event_btVenderActionPerformed
 
+    /**
+     * 
+     * @return lblBtc JLabel
+     */
     public JLabel getLblBtc() {
         return lblBtc;
     }
 
+    /**
+     * 
+     * @param lblBtc 
+     */
     public void setLblBtc(JLabel lblBtc) {
         this.lblBtc = lblBtc;
     }
 
+    /**
+     * 
+     * @return lblEth JLabel
+     */
     public JLabel getLblEth() {
         return lblEth;
     }
 
+    /**
+     * 
+     * @param lblEth 
+     */
     public void setLblEth(JLabel lblEth) {
         this.lblEth = lblEth;
     }
 
+    /**
+     * 
+     * @return lblSaldo JLabel
+     */
     public JLabel getLblSaldo() {
         return lblSaldo;
     }
 
+    /**
+     * 
+     * @param lblSaldo 
+     */
     public void setLblSaldo(JLabel lblSaldo) {
         this.lblSaldo = lblSaldo;
     }
 
+    /**
+     * 
+     * @return lblXrp JLabel
+     */
     public JLabel getLblXrp() {
         return lblXrp;
     }
 
+    /**
+     * 
+     * @param lblXrp 
+     */
     public void setLblXrp(JLabel lblXrp) {
         this.lblXrp = lblXrp;
     }
 
+    /**
+     * 
+     * @return txtSenha JTextField
+     */
     public JTextField getTxtSenha() {
         return txtSenha;
     }
 
+    /**
+     * 
+     * @param txtSenha 
+     */
     public void setTxtSenha(JTextField txtSenha) {
         this.txtSenha = txtSenha;
     }
 
+    /**
+     * 
+     * @return txtValor JTextField
+     */
     public JTextField getTxtValor() {
         return txtValor;
     }
 
+    /**
+     * 
+     * @param txtValor 
+     */
     public void setTxtValor(JTextField txtValor) {
         this.txtValor = txtValor;
     }
 
+    /**
+     * 
+     * @return cbxMoeda JComboBox de String
+     */
     public JComboBox<String> getCbxMoedas() {
         return cbxMoedas;
     }
 
+    /**
+     * 
+     * @param cbxMoedas 
+     */
     public void setCbxMoedas(JComboBox<String> cbxMoedas) {
         this.cbxMoedas = cbxMoedas;
     }
 
+    /**
+     * 
+     * @return pnCripto JPanel
+     */
     public JPanel getPnCripto() {
         return pnCripto;
     }
 
+    /**
+     * 
+     * @param pnCripto 
+     */
     public void setPnCripto(JPanel pnCripto) {
         this.pnCripto = pnCripto;
     }
     
 
-    
-    /**
-     * @param args the command line arguments
-     */
+ 
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

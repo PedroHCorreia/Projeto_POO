@@ -102,30 +102,47 @@ public class JSaldo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * 
+     * @param evt 
+     */
     private void btConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultaActionPerformed
         controller.consultar(investidor);
     }//GEN-LAST:event_btConsultaActionPerformed
 
+    /**
+     * 
+     * @return txtSaldos JTextArea
+     */
     public JTextArea getTxtSaldos() {
         return txtSaldos;
     }
 
+    /**
+     * 
+     * @param txtSaldos 
+     */
     public void setTxtSaldos(JTextArea txtSaldos) {
         this.txtSaldos = txtSaldos;
     }
 
+    /**
+     * 
+     * @return txtSenha JTextField
+     */
     public JTextField getTxtSenha() {
         return txtSenha;
     }
 
+    /**
+     * 
+     * @param txtSenha 
+     */
     public void setTxtSenha(JTextField txtSenha) {
         this.txtSenha = txtSenha;
     }
 
-    
-    /**
-     * @param args the command line arguments
-     */
+
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

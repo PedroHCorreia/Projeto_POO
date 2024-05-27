@@ -5,10 +5,15 @@
 package model;
 
 /**
+ * Classe da criptomoeda Bitcoin
  *
  * @author tioli
  */
-public class Bitcoin extends Moeda{
+public class Bitcoin extends Moeda {
+
+    /**
+     * Construtor com os valores padroes da moeda
+     */
     public Bitcoin() {
         setNome("BTC");
         setTxCompra(0.02);
